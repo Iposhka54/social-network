@@ -4,3 +4,7 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+
+logging:
+  file:
+    name: backend-logs
