@@ -19,7 +19,7 @@ public class UserRequestDto {
     private String username;
 
     @NotBlank(message = "Password cannot be empty or just whitespace.")
-    @Size(min = 8, max = 32, message = "Password must be between 8 and 32 characters.")
+    @Size(min = 4, max = 32, message = "Password must be between 4 and 32 characters.")
     @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Password can only contain letters and numbers.")
     private String password;
 }
