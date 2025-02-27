@@ -29,13 +29,14 @@ public class AuthService {
 
         try {
             userRepository.save(user);
+
             log.info("User with username {} saved to the database", user.getUsername());
+
+            return userMapper.toDto(user);
         } catch (DataIntegrityViolationException e) {
             throw new UserAlreadyExistsException("User with that username already exists");
         } catch (Exception e) {
             throw new DatabaseException("Any problems with database");
         }
-
-        return userMapper.toDto(user);
     }
 }

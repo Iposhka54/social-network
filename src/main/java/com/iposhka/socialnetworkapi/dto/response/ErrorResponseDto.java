@@ -1,5 +1,6 @@
 package com.iposhka.socialnetworkapi.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.Map;
 @Data
 public class ErrorResponseDto {
     private String message;
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     Map<String, String> errors = new HashMap<>();
 
     public ErrorResponseDto(String message) {
