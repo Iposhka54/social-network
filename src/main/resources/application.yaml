@@ -1,4 +1,6 @@
 spring:
+  session:
+    timeout: 2600000
 
   application:
     name: social-network-api
